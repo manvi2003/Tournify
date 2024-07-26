@@ -1,0 +1,29 @@
+@import 'react-calendar/dist/Calendar.css';
+
+.custom-calendar {
+  --fc-border-color: #00aaff; /* Change border color */
+  --fc-bg-color: #E9F4F9; /* Change background color */
+  --fc-text-color: #006064; /* Change text color */
+}
+
+.custom-calendar .react-calendar__tile {
+  background-color: var(--fc-bg-color);
+  color: var(--fc-text-color);
+  border-radius: 0.25rem; /* Tailwind's rounded-md equivalent */
+}
+
+.custom-calendar .react-calendar__tile--now {
+  background: var(--fc-bg-color);
+  color: #006064;
+}
+
+.custom-calendar .react-calendar__tile--active {
+  background: var(--fc-border-color) !important;
+  color: #E9F4F9 !important;
+}
+
+.highlight {
+  background-color: #00aaff !important;
+  color: #E9F4F9 !important;
+  border-radius: 30% !important;
+}

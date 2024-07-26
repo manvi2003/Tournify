@@ -1,0 +1,44 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  display: flex;
+}
+
+main {
+  padding: 4px 15px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #00073d;
+  display: grid;
+  place-items: start;
+}
+
+.main-container{
+  display: flex;
+}
+
+.routes {
+  color: white;
+}
+
+.top-bar {
+  display: flex;
+  /* border-bottom: 1px solid black; */
+  height: 70px;
+  padding: 10px;
+  background-color: #3EA5D1;
+}
