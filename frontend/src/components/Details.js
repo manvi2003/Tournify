@@ -61,22 +61,21 @@ const TournamentDetail = () => {
             <Route
               path="/details"
               element={
-                <div>
-                  <h2 className="text-3xl font-bold mb-4">{tournament.name}</h2>
-                  <div className="flex flex-row">
-                    <div>
-                      <div className="flex flex-row text-2xl font-semibold text-blue-400">
+                <div className="mx-24 m-14 ">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="w-full md:w-1/2">
+                      <div className="flex flex-row text-3xl font-semibold text-blue-400 mb-2">
                         <MdOutlineDescription size={30} className="mr-2" />
                         Description
                       </div>
-                      <p>{tournament.description}</p>
+                      <p className="text-xl ml-3">{tournament.description}</p>
                     </div>
-                    <div className="justify-between">
-                      <div className="flex flex-row text-2xl font-semibold text-blue-400">
+                    <div className="w-full md:w-1/2 ml-32">
+                      <div className="flex flex-row text-3xl font-semibold text-blue-400 mb-2">
                         <MdOutlineCalendarMonth size={30} className="mr-2" />
                         Start Date
                       </div>
-                      <div className="calendar-container mt-2">
+                      <div className="calendar-container mt-4 ml-3">
                         <Calendar
                           value={startDate}
                           tileClassName={({ date, view }) => {
