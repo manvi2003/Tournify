@@ -7,7 +7,7 @@ import { GrSchedules } from "react-icons/gr";
 
 const Sidebar = ({ activeTab, onTabClick }) => {
   return (
-    <div className="w-1/6 bg-blue-100 pt-6 min-h-screen flex flex-col items-center">
+    <div className="w-1/5 bg-blue-100 pt-6 min-h-screen flex flex-col items-center">
       <Link to="/home">
         <button className="w-48 py-2 mb-4 text-xl font-semibold text-white uppercase bg-blue-400 rounded-lg hover:bg-blue-300 hover:text-gray-600">
           <div className="flex flex-row mx-10">

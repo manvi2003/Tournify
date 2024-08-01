@@ -45,7 +45,7 @@ const Teams = () => {
           className="w-3/4 mt-2 px-4 py-2 border bg-blue-100 border-gray-300 rounded-lg"
         />
         <Link to="/create-team">
-          <button className="px-6 py-2 ml-16 bg-blue-400 text-xl font-semibold text-white rounded-lg hover:bg-blue-300">
+          <button className="px-6 py-2 ml-8 bg-blue-400 text-xl font-semibold text-white rounded-lg hover:bg-blue-300">
             CREATE TEAM
           </button>
         </Link>
