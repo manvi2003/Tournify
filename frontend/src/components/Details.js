@@ -9,6 +9,7 @@ import image from '../assets/group.png';
 import Sidebar from "./Sidebar";
 import Teams from "./Teams";
 import Fixture from "./Fixture";
+import { baseUrl } from '../Urls';
 
 const TournamentDetail = () => {
   const { name } = useParams();
@@ -20,7 +21,7 @@ const TournamentDetail = () => {
     const fetchTournament = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/tournaments/name/${name}`
+          `${baseUrl}/api/tournaments/name/${name}`
         );
         setTournament(response.data);
       } catch (error) {

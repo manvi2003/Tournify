@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Details from "./components/Details";
 import CreateTeam from "./components/CreateTeam";
 import CreateTournament from "./components/CreateTournament";
-import GenerateFixtures from "./components/GenerateFixtures";
 import Home from "./components/Home";
 import Topbar from "./components/Topbar";
 import LandingPage from "./components/LandingPage";
@@ -22,7 +21,6 @@ function App() {
           <Route path="/create-tournament" element={<CreateTournament />} />
           <Route path="/tournament/:name/*" element={<Details />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/generate-fixtures" element={<GenerateFixtures />} />
         </Routes>
       </div>
     </Router>

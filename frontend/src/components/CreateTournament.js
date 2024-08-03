@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { baseUrl } from '../Urls';
 
 const CreateTournament = () => {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ const CreateTournament = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/tournaments",
+        `${baseUrl}/api/tournaments`,
         { name, description, startDate }
       );
       console.log(response.data);

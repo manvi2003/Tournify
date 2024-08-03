@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { baseUrl } from '../Urls';
 
 const CreateTeam = () => {
   const [tournaments, setTournaments] = useState([]);
@@ -20,7 +21,7 @@ const CreateTeam = () => {
     const fetchTournaments = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/tournaments"
+          `${baseUrl}/api/tournaments`
         );
         setTournaments(response.data);
       } catch (error) {
@@ -49,7 +50,7 @@ const CreateTeam = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/teams", {
+      const response = await axios.post(`${baseUrl}/api/teams`, {
         name,
         college,
         captain,

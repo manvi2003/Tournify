@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { baseUrl } from '../Urls';
 
 const Fixture = () => {
   const { name } = useParams();
@@ -17,11 +18,11 @@ const Fixture = () => {
     const fetchTeams = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/tournaments/name/${name}`
+          `${baseUrl}/api/tournaments/name/${name}`
         );
         const tournamentId = response.data._id;
         const teamResponse = await axios.get(
-          `http://localhost:5000/api/tournaments/${tournamentId}/teams`
+          `${baseUrl}/api/tournaments/${tournamentId}/teams`
         );
         setTeams(teamResponse.data);
       } catch (error) {
