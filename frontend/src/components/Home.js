@@ -5,6 +5,7 @@ import { baseUrl } from '../Urls';
 
 const Home = () => {
   const [tournaments, setTournaments] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -16,6 +17,8 @@ const Home = () => {
         setTournaments(response.data);
       } catch (error) {
         console.error("Error fetching tournaments:", error);
+      } finally {
+        setLoading(false); // Set loading to false after the request is complete
       }
     };
 
@@ -30,8 +33,8 @@ const Home = () => {
     tournament.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  if (!tournaments) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return <div className="text-base font-bold m-10">Loading...</div>;
   }
 
   return (
