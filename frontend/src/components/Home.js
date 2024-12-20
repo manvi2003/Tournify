@@ -30,6 +30,10 @@ const Home = () => {
     tournament.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  if (!tournaments) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="flex flex-col">
       <div className="flex justify-between items-center m-10 ">
