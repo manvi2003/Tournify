@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { useParams, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "../CustomCalendar.css";
 import { MdOutlineCalendarMonth, MdOutlineDescription } from "react-icons/md";
-import image from '../assets/group.png';
+import image from "../assets/group.png";
 import Sidebar from "./Sidebar";
-import Teams from "./Teams";
-import Fixture from "./Fixture";
-import { baseUrl } from '../Urls';
+import { baseUrl } from "../Urls";
+
+const Teams = lazy(() => import("./Teams"));
+const Fixture = lazy(() => import("./Fixture"));
 
 const TournamentDetail = () => {
   const { name } = useParams();
@@ -95,8 +96,22 @@ const TournamentDetail = () => {
                 </div>
               }
             />
-            <Route path="/teams" element={<Teams />} />
-            <Route path="/fixture" element={<Fixture />} />
+            <Route
+              path="/teams"
+              element={
+                <Suspense fallback={<div>Loading Teams...</div>}>
+                  <Teams />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/fixture"
+              element={
+                <Suspense fallback={<div>Loading Fixture...</div>}>
+                  <Fixture />
+                </Suspense>
+              }
+            />
           </Routes>
         </div>
       </div>

@@ -7,6 +7,7 @@ const Home = () => {
   const [tournaments, setTournaments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
 
   useEffect(() => {
     const fetchTournaments = async () => {
@@ -25,12 +26,22 @@ const Home = () => {
     fetchTournaments();
   }, []);
 
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedQuery(searchQuery);
+    }, 800);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchQuery]);
+
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
   const filteredTournaments = tournaments.filter((tournament) =>
-    tournament.name.toLowerCase().includes(searchQuery.toLowerCase())
+    tournament.name.toLowerCase().includes(debouncedQuery.toLowerCase())
   );
 
   if (loading) {

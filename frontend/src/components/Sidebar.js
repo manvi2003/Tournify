@@ -1,4 +1,3 @@
-// Sidebar.js
 import React from "react";
 import { Link } from "react-router-dom";
 import { IoArrowBack, IoSettingsOutline } from "react-icons/io5";

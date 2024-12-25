@@ -16,7 +16,7 @@ const LandingPage = () => {
           </div>
           <div className="flex flex-row mt-4 mb-8">
             <TbRosetteDiscountCheckFilled size={40} color="3EA5D1" />
-            <div className="text-lg m-1">Quick and easy</div>
+            <div className="text-lg m-1">Organize tournament details</div>
           </div>
           <Link to="/home">
             <button 
